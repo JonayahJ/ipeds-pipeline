@@ -72,12 +72,12 @@ joined as (
 
         -- award level
         case c.awlevel
-            when 1  then '02. Certificate < 1 year'
-            when 20 then '03. Certificate < 1 year (clock hour)'
-            when 2  then '04. Certificate 1-2 years'
-            when 21 then '05. Certificate 1-2 years (clock hour)'
+            when 1  then '01. Certificate < 1 year'
+            when 20 then '02. Certificate < 1 year (clock hour)'
+            when 2  then '03. Certificate 1-2 years'
+            when 21 then '04. Certificate 1-2 years (clock hour)'
+            when 3  then '05. Associate''s degree'
             when 4  then '06. Certificate 2-4 years'
-            when 3  then '01. Associate''s degree'
             when 5  then '07. Bachelor''s degree'
             when 6  then '08. Postbaccalaureate certificate'
             when 7  then '09. Master''s degree'
