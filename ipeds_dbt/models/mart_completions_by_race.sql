@@ -89,6 +89,24 @@ joined as (
             else 'Unknown'
         end                                 as award_level_desc,
 
+        -- award level sort
+        case c.awlevel
+            when 3  then 1
+            when 1  then 2
+            when 20 then 3
+            when 2  then 4
+            when 21 then 5
+            when 4  then 6
+            when 5  then 7
+            when 6  then 8
+            when 7  then 9
+            when 8  then 10
+            when 17 then 11
+            when 18 then 12
+            when 19 then 13
+            else 99
+        end                                 as award_level_sort,
+
         -- raw completion counts
         c.total_completions,
         c.total_men,
