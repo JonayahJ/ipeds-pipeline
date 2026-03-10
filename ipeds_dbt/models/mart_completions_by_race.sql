@@ -71,6 +71,7 @@ joined as (
         end                                 as cip_family,
 
         -- award level
+        c.awlevel,
         case c.awlevel
             when 1  then '01. Certificate < 1 year'
             when 20 then '02. Certificate < 1 year (clock hour)'
