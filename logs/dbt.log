@@ -1,0 +1,31 @@
+[0m12:27:49.485028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104228610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107dc5d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b27ed0>]}
+
+
+============================== 12:27:49.492889 | 0020ecc9-d6fb-41c6-a712-b7b31c5d8fb4 ==============================
+[0m12:27:49.492889 [info ] [MainThread]: Running with dbt=1.11.7
+[0m12:27:49.494431 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'debug': 'False', 'no_print': 'None', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt init ipeds_dbt', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True', 'introspect': 'True', 'empty': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'write_json': 'True', 'printer_width': '80', 'use_colors': 'True', 'warn_error': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'profiles_dir': '/Users/jonayah/.dbt', 'indirect_selection': 'eager', 'log_cache_events': 'False'}
+[0m12:27:49.531287 [info ] [MainThread]: Creating dbt configuration folder at /Users/jonayah/.dbt
+[0m12:27:49.532421 [debug] [MainThread]: Starter project path: /Users/jonayah/.venvs/datawork/lib/python3.11/site-packages/dbt/include/starter_project
+[0m12:27:49.536709 [info ] [MainThread]: 
+Your new dbt project "ipeds_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:27:49.536956 [info ] [MainThread]: Setting up your profile.
+[0m12:29:55.767613 [info ] [MainThread]: Profile ipeds_dbt written to /Users/jonayah/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m12:29:55.790164 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 126.34581, "process_in_blocks": "0", "process_kernel_time": 0.154613, "process_mem_max_rss": "125173760", "process_out_blocks": "0", "process_user_time": 1.113077}
+[0m12:29:55.791254 [debug] [MainThread]: Command `dbt init` succeeded at 12:29:55.791036 after 126.35 seconds
+[0m12:29:55.792386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100d84990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107fbbf50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c3ed10>]}
+[0m12:29:55.793168 [debug] [MainThread]: Flushing usage events
+[0m12:29:55.975767 [debug] [MainThread]: An error was encountered while trying to flush usage events

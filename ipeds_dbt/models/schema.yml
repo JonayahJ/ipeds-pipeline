@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: stg_completions_2024
+    description: "Staged completions data from IPEDS 2023-24. Awards and degrees conferred by program, award level, race/ethnicity, and gender."
+    columns:
+      - name: unitid
+        description: "Unique institution identifier assigned by IPEDS"
+        tests:
+          - not_null
+      - name: cipcode
+        description: "6-digit CIP code identifying the program of study"
+        tests:
+          - not_null
+      - name: awlevel
+        description: "Award level code (e.g. 5 = Bachelor's, 7 = Master's)"
+        tests:
+          - not_null
+      - name: total_completions
+        description: "Total completions across all genders and races"
+        tests:
+          - not_null
+      - name: majornum
+        description: "First or second major (1 or 2)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2]
+      - name: total_men
+        description: "Total completions for men"
+      - name: total_women
+        description: "Total completions for women"
+      - name: aian_total
+        description: "American Indian or Alaska Native completions"
+      - name: asian_total
+        description: "Asian completions"
+      - name: black_total
+        description: "Black or African American completions"
+      - name: hispanic_total
+        description: "Hispanic or Latino completions"
+      - name: nhpi_total
+        description: "Native Hawaiian or Other Pacific Islander completions"
+      - name: white_total
+        description: "White completions"
+      - name: two_or_more_total
+        description: "Two or more races completions"
+      - name: unknown_total
+        description: "Race/ethnicity unknown completions"
+      - name: nonresident_total
+        description: "Nonresident alien completions"
