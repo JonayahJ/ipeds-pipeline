@@ -71,22 +71,21 @@ joined as (
         end                                 as cip_family,
 
         -- award level
-        c.awlevel,
         case c.awlevel
-            when 1  then 'Certificate < 1 year'
-            when 2  then 'Certificate 1-2 years'
-            when 3  then 'Associate''s degree'
-            when 4  then 'Certificate 2-4 years'
-            when 5  then 'Bachelor''s degree'
-            when 6  then 'Postbaccalaureate certificate'
-            when 7  then 'Master''s degree'
-            when 8  then 'Post-master''s certificate'
-            when 17 then 'Doctor''s degree - research/scholarship'
-            when 18 then 'Doctor''s degree - professional practice'
-            when 19 then 'Doctor''s degree - other'
-            when 20 then 'Certificate < 1 year (clock hour)'
-            when 21 then 'Certificate 1-2 years (clock hour)'
-            else 'Unknown'
+            when 1  then '02. Certificate < 1 year'
+            when 20 then '03. Certificate < 1 year (clock hour)'
+            when 2  then '04. Certificate 1-2 years'
+            when 21 then '05. Certificate 1-2 years (clock hour)'
+            when 4  then '06. Certificate 2-4 years'
+            when 3  then '01. Associate''s degree'
+            when 5  then '07. Bachelor''s degree'
+            when 6  then '08. Postbaccalaureate certificate'
+            when 7  then '09. Master''s degree'
+            when 8  then '10. Post-master''s certificate'
+            when 17 then '11. Doctor''s degree - research/scholarship'
+            when 18 then '12. Doctor''s degree - professional practice'
+            when 19 then '13. Doctor''s degree - other'
+            else '99. Unknown'
         end                                 as award_level_desc,
 
         -- award level sort
