@@ -25,7 +25,8 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: [1, 2]
+              arguments:
+                values: [1, 2]
       - name: total_men
         description: "Total completions for men"
       - name: total_women
