@@ -19,10 +19,10 @@ joined as (
         i.institution_level,
         i.sector_desc,
         i.institution_size_desc,
-        i.hbcu = 1                          as is_hbcu,
-        i.tribal = 1                        as is_tribal,
-        i.hospital = 1                      as is_hospital,
-        i.medical = 1                       as is_medical,
+        i.hbcu = 1 as is_hbcu,
+        i.tribal = 1 as is_tribal,
+        i.hospital = 1 as is_hospital,
+        i.medical = 1 as is_medical,
         i.state in ('PR','GU','VI','MP','AS') as is_territory,
         i.latitude,
         i.longitude,
@@ -68,7 +68,7 @@ joined as (
             when c.cipcode like '52.%' then 'Business & Management'
             when c.cipcode like '54.%' then 'History'
             else 'Other'
-        end                                 as cip_family,
+        end as cip_family,
 
         -- award level
         c.awlevel,
@@ -87,25 +87,43 @@ joined as (
             when 18 then '12. Doctor''s degree - professional practice'
             when 19 then '13. Doctor''s degree - other'
             else '99. Unknown'
-        end                                 as award_level_desc,
+        end as award_level_desc,
 
         -- award level sort
         case c.awlevel
-            when 3  then 1
-            when 1  then 2
-            when 20 then 3
-            when 2  then 4
-            when 21 then 5
-            when 4  then 6
-            when 5  then 7
-            when 6  then 8
-            when 7  then 9
-            when 8  then 10
-            when 17 then 11
-            when 18 then 12
-            when 19 then 13
-            else 99
-        end                                 as award_level_sort,
+            when 3  then 1 -- '01. Certificate < 1 year'
+            when 1  then 2 -- '02. Certificate < 1 year (clock hour)'
+            when 20 then 3 -- '03. Certificate 1-2 years'
+            when 2  then 4 -- '04. Certificate 1-2 years (clock hour)'
+            when 21 then 5 -- '05. Associate''s degree'
+            when 4  then 6 -- '06. Certificate 2-4 years'
+            when 5  then 7 -- '07. Bachelor''s degree'
+            when 6  then 8 -- '08. Postbaccalaureate certificate'
+            when 7  then 9 -- '09. Master''s degree'
+            when 8  then 10 -- '10. Post-master''s certificate'
+            when 17 then 11 -- '11. Doctor''s degree - research/scholarship'
+            when 18 then 12 -- '12. Doctor''s degree - professional practice'
+            when 19 then 13 -- '13. Doctor''s degree - other'
+            else 99 -- unknown
+        end as award_level_sort,
+
+        -- award level tier
+        case c.awlevel
+            when 1  then '1. Subbaccalaureate Certificate'
+            when 20 then '1. Subbaccalaureate Certificate'
+            when 2  then '1. Subbaccalaureate Certificate'
+            when 21 then '1. Subbaccalaureate Certificate'
+            when 4  then '1. Subbaccalaureate Certificate'
+            when 3  then '2. Associate''s Degree'
+            when 5  then '3. Bachelor''s Degree'
+            when 6  then '4. Postbaccalaureate Certificate'
+            when 7  then '5. Master''s Degree'
+            when 8  then '5. Master''s Degree'
+            when 17 then '6. Doctorate'
+            when 18 then '6. Doctorate'
+            when 19 then '6. Doctorate'
+            else '7. Unknown'
+        end as award_level_tier,
 
         -- raw completion counts
         c.total_completions,
