@@ -16,6 +16,7 @@ joined as (
         i.institution_name,
         i.city,
         i.state,
+        'US-' || i.state as state_iso,
         i.county,
         i.control_type,
         i.institution_level,
