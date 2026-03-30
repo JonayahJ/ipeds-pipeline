@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with completions as (
     select * from {{ ref('stg_completions_2024') }}
     where cipcode != '99'
